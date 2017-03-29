@@ -1,0 +1,19 @@
+import re
+with open("12_read_29_11_13.txt", "r") as myfile:
+    data=myfile.read()#.replace('\n', '')       
+data = re.sub("\t", "", data)
+data = re.sub("\n\n", "", data)
+data = re.sub("\n", "", data)
+data = re.sub("R:|Jane:", "\n00: ", data)
+data = re.sub("John:", "\n11: ", data)
+data = re.sub("Catherine:", "\n12: ", data)
+data = re.sub("Angela:", "\n13: ", data)
+data = re.sub("Helen:", "\n14: ", data)
+data = re.sub("Maureen:", "\n15: ", data)
+data = re.sub("David:", "\n16: ", data)
+data = re.sub("Grace:", "\n17: ", data)
+data = re.sub("Sophie:", "\n18: ", data)
+#data = re.sub("Gracessss:", "\n19: ", data)
+#print data
+outputfile = open("12.txt", "w")
+outputfile.write(data)
